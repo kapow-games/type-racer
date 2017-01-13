@@ -1,0 +1,28 @@
+.fullwidth {
+    width: 100%;
+    height: 40px;
+    margin-top: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.centerTop {
+    position: fixed;
+    top: 30%;
+}
+
+.leftLess {
+  left: 10%;
+}
+
+.leftMore {
+  left: 20%;
+}
+
+.leftMax {
+  left: 30%;
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+}
