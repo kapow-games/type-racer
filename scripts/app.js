@@ -16,7 +16,6 @@ $(function() {
   P.S: All game life cycle methods are expected to be defined inside the `game` object
 ---------------------------------------------------------------------------------------
 */
-
 game.onLoad = function(room) {
   console.log("onLoad");
   if (room == null) {
@@ -40,12 +39,11 @@ game.onPlayerJoined = function(player) {
   }
 }
 
-game.onDataReceived = function(data) {
-  console.log("Data received: ", data);
-  var d = JSON.parse(data.data);
-  if (d.type == 'update') {
-    $('#opponentText').text(d.text);
-  } else if (d.type == 'victory') {
+game.onMessageReceived = function(message) {
+  console.log("Message received: ", message);
+  if (message.data.type == 'update') {
+    $('#opponentText').text(message.data.text);
+  } else if (message.data.type == 'victory') {
     alert("Sorry, you lost! :(");
   }
 }
