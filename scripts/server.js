@@ -1,7 +1,9 @@
 var game = {};
 
 var passages = [
-  "A quick brown fox jumps over the lazy dog."
+  "A quick brown fox jumps over the lazy dog.",
+  "He felt that his whole life was some kind of dream and he sometimes wondered whose it was and whether they were enjoying it.",
+  "For a moment, nothing happened. Then, after a second or so, nothing continued to happen."
 ]
 
 sendState = function(value) {
