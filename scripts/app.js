@@ -93,9 +93,8 @@ var startGame = function() {
   ui.showGameScreen();
 
   kapow.invokeRPC('getText', room.roomId, function(text) { // Fetch text from the server and set it on the screen
-    passage = JSON.parse(text);
-    console.log("Received text: ", passage);
-    $('#content').text(passage);
+    console.log("Received: " + text);
+    $('#content').text(text);
   });
 
   addHandlerForTextBox();
