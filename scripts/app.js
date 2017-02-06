@@ -94,6 +94,7 @@ var startGame = function() {
 
   kapow.invokeRPC('getText', room.roomId, function(text) { // Fetch text from the server and set it on the screen
     console.log("Received: " + text);
+    passage = text;
     $('#content').text(text);
   });
 
