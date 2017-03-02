@@ -92,10 +92,10 @@ var playAgainst = function(opponentType) {
 var startGame = function() {
   ui.showGameScreen();
 
-  kapow.invokeRPC('getText', room.roomId, function(text) { // Fetch text from the server and set it on the screen
-    console.log("Received: " + text);
-    passage = text;
-    $('#content').text(text);
+  kapow.invokeRPC('getText', room.roomId, function(response) { // Fetch text from the server and set it on the screen
+    console.log("Received: " + response);
+    passage = response.text;
+    $('#content').text(passage);
   });
 
   addHandlerForTextBox();

@@ -19,7 +19,8 @@ postVictory = function() {
   });
 }
 
-getText = function(roomId) {
+getText = function(data) {
+  let roomId = data.roomId;
   console.log("Getting text for: ", roomId)
   return passages[Math.abs(hashCode(roomId) % passages.length)];
 }
