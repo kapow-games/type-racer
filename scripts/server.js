@@ -6,23 +6,26 @@ var passages = [
   "For a moment, nothing happened. Then, after a second or so, nothing continued to happen."
 ]
 
-sendState = function(value) {
+game.sendState = function(value) {
   kapow.sendData({
     'type': 'update',
     'text': value
   });
 }
 
-postVictory = function() {
+game.postVictory = function() {
   kapow.sendData({
     'type': 'victory'
   });
 }
 
-getText = function(data) {
-  let roomId = data.roomId;
-  console.log("Getting text for: ", roomId)
-  return passages[Math.abs(hashCode(roomId) % passages.length)];
+getToken = function() {
+  return 'broyxbrxipj4o4ripojqbrqpqxpiiybr';
+}
+
+game.getText = function(room) {
+  console.log("Getting text for: ", room.roomId)
+  kapow.return({'text': passages[Math.abs(hashCode(room.roomId) % passages.length)]});
 }
 
 // Source: http://stackoverflow.com/a/15710692/1069405
