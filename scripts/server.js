@@ -10,7 +10,7 @@ game.sendState = function(value) {
   kapow.sendData({
     'type': 'update',
     'text': value
-  });
+  }, kapow.getPlayerId(), kapow.getRoomInfo().roomId);
 }
 
 game.postVictory = function() {
@@ -25,7 +25,9 @@ getToken = function() {
 
 game.getText = function(room) {
   console.log("Getting text for: ", room.roomId)
-  kapow.return({'text': passages[Math.abs(hashCode(room.roomId) % passages.length)]});
+  kapow.return({
+    'text': passages[Math.abs(hashCode(room.roomId) % passages.length)]
+  });
 }
 
 // Source: http://stackoverflow.com/a/15710692/1069405
