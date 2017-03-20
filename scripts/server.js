@@ -10,7 +10,11 @@ game.sendState = function(value) {
   kapow.sendData({
     'type': 'update',
     'text': value
-  }, kapow.getPlayerId(), kapow.getRoomInfo().roomId);
+  }, kapow.getPlayerId(), kapow.getRoomInfo().roomId, function() {
+    kapow.return({
+      'result': 'success'
+    });
+  });
 }
 
 game.postVictory = function() {
