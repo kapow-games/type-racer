@@ -17,14 +17,16 @@ game.sendState = function(value) {
   });
 }
 
-game.postVictory = function() {
-  kapow.sendData({
-    'type': 'victory'
+game.postVictory = function(ranks) {
+  kapow.endGame(ranks, kapow.getRoomInfo().roomId, function() {
+    kapow.return("success");
+  }, function(error) {
+    kapow.return(null, error);
   });
 }
 
 getToken = function() {
-  return 'broyxbrxipj4o4ripojqbrqpqxpiiybr';
+  return '91t4ty47t91taxxxayy43x94133t5tx3';
 }
 
 game.getText = function(room) {

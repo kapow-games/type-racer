@@ -118,8 +118,14 @@ var addHandlerForTextBox = function() {
     colorText();
 
     if (enteredText == passage) {
-      kapow.invokeRPC('postVictory');
-      alert("Congratulations! You won!");
+      kapow.invokeRPC('postVictory', {
+        user.playerId: 1,
+        opponent.playerId: 2
+      }, function() {
+        alert("Congratulations! You won!");
+      }, function() {
+        console.error("Error reporting outcome")
+      });
     }
   });
 }
